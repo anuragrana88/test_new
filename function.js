@@ -4,8 +4,8 @@ var _ = require('lodash')
 var obj = {
     hooks: {
       preSaveFunction: function(options, callback) {
-        client.registerMethod("jsonMethod", "http://api.fixer.io/latest",
-          "GET");
+        client.registerMethod('jsonMethod', 'http://api.fixer.io/latest',
+          'GET');
         client.methods.jsonMethod(function(data, response) {
           var currentRate = JSON.stringify(data['rates'].INR);
           var currentDate = JSON.stringify(data['date']);

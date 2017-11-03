@@ -2,24 +2,24 @@ var request = require('request');
 var myoptions = {
   method: 'post',
   body: {
-    type: "rest",
-    name: "my connection from local testflow using api",
+    type: 'rest',
+    name: 'my connection from local testflow using api',
     rest: {
-      baseURI: "http://demo9624631.mockable.io/",
-      mediaType: "json",
-      authType: "basic",
-      pingRelativeURI: "rs1/emp",
-      pingMethod: "GET",
+      baseURI: 'http://demo9624631.mockable.io/',
+      mediaType: 'json',
+      authType: 'basic',
+      pingRelativeURI: 'rs1/emp',
+      pingMethod: 'GET',
       basicAuth: {
-        username: "abc",
-        password: "******"
+        username: 'abc',
+        password: '******'
       }
     }
   },
   json: true,
   url: 'https://api.integrator.io/v1/connections',
   headers: {
-    Authorization: "Bearer 97a832d574cd49318cfacd4e5ce5d8f9",
+    Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
   }
 }
 
@@ -38,25 +38,25 @@ function exportsNew(id) {
   var exportoptions = {
     method: 'post',
     body: {
-      name: "export from testflow",
+      name: 'export from testflow',
       _connectionId: id,
-      apiIdentifier: "e152ce597e",
+      apiIdentifier: 'e152ce597e',
       asynchronous: true,
       sampleData: {
-        department: "Technology",
-        company: "Celigo Inc.",
-        age: "23",
-        fname: "sharat"
+        department: 'Technology',
+        company: 'Celigo Inc.',
+        age: '23',
+        fname: 'sharat'
       },
       rest: {
-        relativeURI: "rs1/emp",
-        method: "GET"
+        relativeURI: 'rs1/emp',
+        method: 'GET'
       }
     },
     json: true,
     url: 'https://api.integrator.io/v1/exports',
     headers: {
-      Authorization: "Bearer 97a832d574cd49318cfacd4e5ce5d8f9",
+      Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
     }
   }
 
@@ -77,37 +77,37 @@ function importsNew(exportid, id) {
   var importoptions = {
     method: 'post',
     body: {
-      name: "import from local",
+      name: 'import from local',
       sampleData: {
-        name: "abc",
-        How_old_are_you: "22",
-        Orgnisataion: "google",
-        Title: "Developer"
+        name: 'abc',
+        How_old_are_you: '22',
+        Orgnisataion: 'google',
+        Title: 'Developer'
       },
       responseTransform: {
-        version: "1"
+        version: '1'
       },
       _connectionId: id,
       distributed: false,
-      apiIdentifier: "i2ec01f3e8",
+      apiIdentifier: 'i2ec01f3e8',
       mapping: {
         fields: [{
-          extract: "fname",
-          generate: "name"
+          extract: 'fname',
+          generate: 'name'
         }, {
-          extract: "age",
-          generate: "How_old_are_you"
+          extract: 'age',
+          generate: 'How_old_are_you'
         }, {
-          extract: "{{department}},{{company}}",
-          generate: "Title"
+          extract: '{{department}},{{company}}',
+          generate: 'Title'
         }]
       },
       rest: {
         relativeURI: [
-          "RS2/person"
+          'RS2/person'
         ],
         method: [
-          "POST"
+          'POST'
         ],
         body: [
           null
@@ -123,7 +123,7 @@ function importsNew(exportid, id) {
     json: true,
     url: 'https://api.integrator.io/v1/imports',
     headers: {
-      Authorization: "Bearer 97a832d574cd49318cfacd4e5ce5d8f9",
+      Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
     }
   }
 
@@ -143,18 +143,18 @@ function flowstest(exportid, importid, connectionid) {
   var flowoptions = {
     method: 'post',
     body: {
-      name: "My first flow from local",
+      name: 'My first flow from local',
       disabled: false,
-      timezone: "Asia/Calcutta",
+      timezone: 'Asia/Calcutta',
       _exportId: exportid,
       _importId: importid,
-      "_integrationId": "59f998966073da12431c8ec6",
+      '_integrationId': '59f998966073da12431c8ec6',
       skipRetries: false,
     },
     json: true,
     url: 'https://api.integrator.io/v1/flows',
     headers: {
-      Authorization: "Bearer 97a832d574cd49318cfacd4e5ce5d8f9",
+      Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
     }
   }
 
