@@ -12,14 +12,14 @@ var myoptions = {
       pingMethod: 'GET',
       basicAuth: {
         username: 'abc',
-        password: '******'
+        password: ''
       }
     }
   },
   json: true,
   url: 'https://api.integrator.io/v1/connections',
   headers: {
-    Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
+    Authorization: 'Bearer **',
   }
 }
 
@@ -40,7 +40,7 @@ function exportsNew(id) {
     body: {
       name: 'export from testflow',
       _connectionId: id,
-      apiIdentifier: 'e152ce597e',
+      apiIdentifier: '**',
       asynchronous: true,
       sampleData: {
         department: 'Technology',
@@ -56,7 +56,7 @@ function exportsNew(id) {
     json: true,
     url: 'https://api.integrator.io/v1/exports',
     headers: {
-      Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
+      Authorization: 'Bearer **',
     }
   }
 
@@ -89,7 +89,7 @@ function importsNew(exportid, id) {
       },
       _connectionId: id,
       distributed: false,
-      apiIdentifier: 'i2ec01f3e8',
+      apiIdentifier: '**',
       mapping: {
         fields: [{
           extract: 'fname',
@@ -123,7 +123,7 @@ function importsNew(exportid, id) {
     json: true,
     url: 'https://api.integrator.io/v1/imports',
     headers: {
-      Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
+      Authorization: 'Bearer **',
     }
   }
 
@@ -148,13 +148,13 @@ function flowstest(exportid, importid, connectionid) {
       timezone: 'Asia/Calcutta',
       _exportId: exportid,
       _importId: importid,
-      '_integrationId': '59f998966073da12431c8ec6',
+      '_integrationId': '**',
       skipRetries: false,
     },
     json: true,
     url: 'https://api.integrator.io/v1/flows',
     headers: {
-      Authorization: 'Bearer 97a832d574cd49318cfacd4e5ce5d8f9',
+      Authorization: 'Bearer **',
     }
   }
 
